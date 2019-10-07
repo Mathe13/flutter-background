@@ -3,12 +3,14 @@ description: The most sophisticated background location-tracking & geofencing mo
 version: 1.2.0
 author: Chris Scott, Transistor Software <info@transistorsoft.com>
 homepage: https://github.com/transistorsoft/flutter_background_geolocation
- 
+
 dependencies:
   flutter:
     sdk: flutter
   device_info: ^0.4.0
   background_fetch: ^0.2.0
+  url_launcher: ^5.1.4
+
 flutter:
   plugin:
     androidPackage: com.transistorsoft.flutter.backgroundgeolocation

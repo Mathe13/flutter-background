@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_background_geolocation/flutter_background_geolocation.dart'
     as bg;
@@ -245,7 +246,14 @@ class _HomeViewState extends State<_HomeView> {
                       color: Colors.redAccent,
                       textColor: Colors.white),
                   FlatButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        const url = 'http://200.132.92.82:3000';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
                       child: Text('Acessar site'),
                       color: Colors.blue,
                       textColor: Colors.white),
